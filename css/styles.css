@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,500;1,700&display=swap');
+
+body {
+    display: block;
+    background-image: url("../img/bg.png");
+    backface-visibility: hidden;
+    backdrop-filter: brightness(80%);
+    background-size: cover;
+    font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 97vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px rgb(255, 255, 255);
+    border-radius:5px;
+}
+
+.card-container {
+    width: 400px;
+    height: 500px;
+    border-radius:5px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card figure {
+    width: 100%;
+    height: 100%;
+    border-radius:5px;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    margin: 0;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+}
+
+
+.card .front {
+    background: rgba(255, 255, 255, 0.33);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.card .front img {
+    height: 200px;
+    width: 200px;
+    border: solid 5px whitesmoke;
+    border-radius: 50%;
+    image-rendering: crisp-edges;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.card .front h1 {
+    font-size: 28px;
+    position: relative;
+    top: 10px;
+    color: #ffffff;
+}
+
+.card .front .desc {
+    font-size: 20px;
+    position: relative;
+    top: -30px;
+    color: #ffffff;
+}
+
+.card .front .caption {
+    font-size: 16px;
+    color: white;
+    font-style: italic;
+    position: relative;
+    bottom: 20px;
+}
+
+.card .back {
+    background: rgba(255, 255, 255, 0.33);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    transform: rotateY(180deg);
+}
+
+.card .back h1 {
+    color: white;
+    position: relative;
+    top: -50px;
+}
+
+.socmed {
+    display: inline-flex;
+    padding: 10px;
+    padding-bottom: 12px;
+}
+
+.socmed .icon {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.socmed .icon a span{
+    height: 40px;
+    width: 40px;
+    display: block;
+    background-color: #c75d9e;
+    text-align: center;
+    border: solid 1px #EAD6E3;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.socmed .icon span i{
+    display: block;
+    color: #EAD6E3;
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.socmed .icon a {
+    text-decoration: none;
+    color: #5A30B7;
+}
+
+.socmed .icon a:visited {
+    color: ##5A30B7;
+}
+
+.socmed .icon span i:hover {
+    color: #f6f7f8;
+}
+
+.socmed .icon .fb span:hover {
+    background-color: #4267B2;
+}
+
+.socmed .icon .ig span:hover {
+    background-color: #dd2a7b;
+}
+
+.socmed .icon .github span:hover {
+    background-color: #161B22;
+}
+
+.socmed .icon .tooltip{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: #fff;
+    color: #fff;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.socmed .icon:hover .tooltip{
+    top: -50px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.icon .tooltip:before{
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%) rotate(45deg);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
